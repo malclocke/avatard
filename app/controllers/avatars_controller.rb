@@ -11,10 +11,10 @@ class AvatarsController < ApplicationController
 
       if params[:s]
         s = params[:s].to_i.to_s
-        size = "#{s}x#{s}"
       else
-        size = "50x50"
+        s = Avatar::DEFAULT_SIZE
       end
+      size = "#{s}x#{s}"
 
       respond_to do |format|
         format.png  { redirect_to @avatar.avatar.thumb(size).url }
@@ -23,7 +23,7 @@ class AvatarsController < ApplicationController
     rescue ActiveRecord::RecordNotFound
       # FIXME - Need to find the right way to do this, cannot access
       # the URL helpers from controller
-      redirect_to "http://#{env['HTTP_HOST']}/images/default.png"
+      redirect_to "http://#{request.host_with_port}/images/default.png"
     end
   end
 

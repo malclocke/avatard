@@ -21,4 +21,9 @@ class AvatarTest < ActiveSupport::TestCase
       assert !avatar.save
     end
   end
+
+  test "should get default dimensions" do
+    assert_equal "50x50", Avatar.dimensions
+    assert_equal "100x100", Avatar.dimensions(100)
+  end
 end
