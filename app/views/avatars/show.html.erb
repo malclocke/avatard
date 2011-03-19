@@ -1,0 +1,5 @@
+<%= image_tag @avatar.avatar.thumb('200x200').url %>
+
+<% form_for @avatar, :html => {:multipart => true} do |form| %>
+  <%= render form %>
+<% end %>

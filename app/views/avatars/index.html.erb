@@ -1,0 +1,12 @@
+<h2>New avatar</h2>
+
+<%= form_for @avatar, :html => {:multipart => true} do |f| %>
+<%= render f %>
+<% end %>
+
+<hr>
+
+<% @avatars.each do |avatar| %>
+  <%= link_to(image_tag(avatar.avatar.thumb('64x64').url), avatar_url(avatar)) %>
+<% end %>
+

@@ -1,0 +1,24 @@
+<% if @avatar.errors.any? %>
+  <div id="errors">
+    <h3>Errors!</h3>
+    <ul>
+      <% @avatar.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<p>
+  <%= form.label :email %>
+  <% if form.object.new_record? %>
+    <%= form.text_field :email %>
+  <% else %>
+    <input type="text" name="avatar[email]" id="avatar_email">
+  <% end %>
+</p>
+<p>
+  <%= form.label :avatar %>
+  <%= form.file_field :avatar %>
+</p>
+<%= form.submit %>
