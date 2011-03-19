@@ -4,4 +4,4 @@
 require File.expand_path('../config/application', __FILE__)
 require 'rake'
 
-Gravatrap::Application.load_tasks
+Avatard::Application.load_tasks

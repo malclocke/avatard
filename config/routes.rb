@@ -1,4 +1,4 @@
-Gravatrap::Application.routes.draw do
+Avatard::Application.routes.draw do
 
   resources :avatars
 
