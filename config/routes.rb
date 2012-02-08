@@ -2,7 +2,7 @@ Avatard::Application.routes.draw do
 
   resources :avatars
 
-  match 'avatar/:id.png' => 'avatars#show', :format => :png
+  match 'avatar/:id(.:format)' => 'avatars#show', :format => :png
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
